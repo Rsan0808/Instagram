@@ -51,11 +51,16 @@ class PostTableViewCell: UITableViewCell {
         }
         
         //課題のとこ
+        var commentText = ""
         
-        if postData.comment == nil{
-            self.commentLabel.text = ""
-        } else{
-        self.commentLabel.text = "\(postData.name!) : \(postData.comment!)"
+        if postData.comments != nil{
+            
+            for comments in postData.comments{
+                commentText += comments + "\n"
+                self.commentLabel.text = commentText
+                print(comments)
+            }
+           
         }
     }
     
